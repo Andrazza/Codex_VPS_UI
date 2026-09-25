@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+data/
+logs/
+*.log
+.stage1.pid
+.protocol-schema/
