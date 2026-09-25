@@ -1,0 +1,19 @@
+[Unit]
+Description=Codex Desk web interface
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/codex-ui
+EnvironmentFile=/opt/codex-ui/.env
+ExecStart=/usr/bin/node --env-file-if-exists=/opt/codex-ui/.env /opt/codex-ui/dist/server.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+NoNewPrivileges=yes
+PrivateTmp=yes
+UMask=0077
+
+[Install]
+WantedBy=default.target
